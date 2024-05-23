@@ -1,4 +1,4 @@
-appName: dev-apps-ingress
+appName: middleware
 
 namespace: dev
 
