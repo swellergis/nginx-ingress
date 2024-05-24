@@ -3,4 +3,4 @@ appName: middleware
 namespace: dev
 
 serviceName: middleware-svc
-serviceTargetPort: 8080
+serviceTargetPort: 3000
