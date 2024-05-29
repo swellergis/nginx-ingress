@@ -14,7 +14,6 @@ spec:
             port:
               # TargetPort is the same as APP_BIND_PORT, the port on which the
               # service will send requests to, that your pod will be listening on.
-              # matches MIDDLEWARE_SERVICE_TARGET_PORT in vertx deployment.
-              number: 3000
+              number: {{ .Values.services.middleware.serviceTargetPort }}
         path: /
         pathType: Prefix
