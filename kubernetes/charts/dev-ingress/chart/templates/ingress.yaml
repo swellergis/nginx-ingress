@@ -5,13 +5,16 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   rules:
-  - host: {{ .Values.appName }}
+  - host: {{ .Values.ingressHost }}
     http:
       paths:
       - backend:
           service:
-            name: {{ .Values.serviceName }}
+            name: {{ .Values.services.middleware.name }}
             port:
-              number: {{ .Values.serviceTargetPort }}
+              # TargetPort is the same as APP_BIND_PORT, the port on which the
+              # service will send requests to, that your pod will be listening on.
+              # matches MIDDLEWARE_SERVICE_TARGET_PORT in vertx deployment.
+              number: 3000
         path: /
         pathType: Prefix

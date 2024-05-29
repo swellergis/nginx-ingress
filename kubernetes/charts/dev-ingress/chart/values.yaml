@@ -1,6 +1,8 @@
-appName: middleware
-
+# namespace in which to create objects
 namespace: dev
+ingressHost: middleware.local
 
-serviceName: middleware-svc
-serviceTargetPort: 3000
+services:
+  middleware:
+    # matches serviceName in vertx deployment
+    name: middleware-svc
