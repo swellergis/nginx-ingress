@@ -8,6 +8,7 @@ spec:
   - host: {{ .Values.ingressHost }}
     http:
       paths:
+      # handle requests that need keycloak auth
       - backend:
           service:
             name: {{ .Values.services.middleware.name }}
@@ -15,5 +16,6 @@ spec:
               # TargetPort is the same as APP_BIND_PORT, the port on which the
               # service will send requests to, that your pod will be listening on.
               number: {{ .Values.services.middleware.serviceTargetPort }}
-        path: /
+        # matches MIDDLEWARE_URL_PATTERN in vertx deployment
+        path: /middleware
         pathType: Prefix

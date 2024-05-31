@@ -1,10 +1,10 @@
 # namespace in which to create objects
 namespace: dev
-ingressHost: middleware.local
+ingressHost: logi.local
 
 services:
   middleware:
     # matches serviceName in vertx deployment
-    name: middleware-svc
+    name: logi-middleware-svc
     # matches MIDDLEWARE_SERVICE_TARGET_PORT or APP_BIND_PORT in vertx deployment.
-    serviceTargetPort: 3000
+    serviceTargetPort: 8081
