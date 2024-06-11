@@ -4,7 +4,7 @@ ingressHost: logi.local
 
 services:
   middleware:
-    # matches serviceName in vertx deployment
-    name: logi-middleware-svc
+    # matches name in vertx service manifest
+    name: vertx-middleware-svc
     # matches MIDDLEWARE_SERVICE_TARGET_PORT or APP_BIND_PORT in vertx deployment.
     serviceTargetPort: 8081
