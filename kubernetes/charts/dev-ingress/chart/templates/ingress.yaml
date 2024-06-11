@@ -19,3 +19,14 @@ spec:
         # matches MIDDLEWARE_URL_PATTERN in vertx deployment
         path: /middleware
         pathType: Prefix
+  # Access to keycloak application
+  - host: auth.local
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: keycloak-svc
+              port:
+                number: 8080
