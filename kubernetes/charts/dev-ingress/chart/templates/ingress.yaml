@@ -4,6 +4,12 @@ metadata:
   name: dev-apps-ingress
   namespace: {{ .Values.namespace }}
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - auth.local
+      - logi.local
+      secretName: dev-ingress-secret
   rules:
   - host: {{ .Values.ingressHost }}
     http:
